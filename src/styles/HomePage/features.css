@@ -1,0 +1,65 @@
+.features {
+    background-color: var(--light-blue);
+    height: 93vh;
+    width: 50%;
+    z-index: -1;
+    position: relative;
+    overflow: hidden;
+}
+@media(max-width: 990px) {
+    .features {
+        width: 100%;
+
+    }
+
+}
+.features h4 {
+    color: #fff;
+    font-size: 1rem;
+    margin-top: .5rem;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+
+}
+/* z-n1 light-blue inline-block fill h-160vh max-width-none pos-abs right-n50vh vert-align-text-bot top-n30vh user-select-none */
+.twitter-banner {
+    z-index: -1;
+    color: var(--blue);
+    display: inline-block;
+    height: 160vh;
+    max-width: none;
+    position: absolute;
+    right: -50vh;
+    top: -30vh;
+    vertical-align: text-bottom;
+    user-select:none;
+}
+
+.top-40vh {
+    top: 35vh;
+}
+.left-30vh {
+    left: 30vh;
+}
+.white {
+    color: #fff;
+}
+
+.features-list {
+    height: 25vh;
+}
+/* .feature {
+    margin-top: 2rem;
+} */
+@media(max-width: 990px) {
+    .feature h4 {
+        font-size: 1rem;
+
+    }
+    /* .feature {
+        margin-top: 1.2rem;
+    } */
+    .features {
+        height: 30vh;
+    }
+}

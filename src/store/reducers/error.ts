@@ -19,6 +19,8 @@ const error = (state = initialState, action: IError) => {
                 status: null,
                 id: null
             };
+        default:
+            return state;
     }
 };
 export default error;

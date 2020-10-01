@@ -1,5 +1,5 @@
 import axios, { AxiosResponse, AxiosRequestConfig } from 'axios';
-import { Action } from 'redux';
+import { Action, Dispatch } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 
 import { RootState } from '../../store';
@@ -12,13 +12,15 @@ import
         LOGOUT_SUCCESS,
         REGISTER_FAILED,
         REGISTER_SUCCESS,
-        AUTH_ERROR
+        AUTH_ERROR,
+        MODAL_OPEN,
+        MODAL_CLOSE
     } from '../actionTypes';
 import { returnErrors } from './error';
 
 
 export const configToken = (getState: () => RootState): AxiosRequestConfig => {
-    const token: string = getState().auth.token;
+    const token: string = getState().auth['token'];
 
     // Header
     const config: AxiosRequestConfig = {
@@ -36,7 +38,7 @@ export const configToken = (getState: () => RootState): AxiosRequestConfig => {
 
 }
 export const loadUser = (): ThunkAction<void, RootState, unknown, Action> =>
-                            (dispatch, getState) =>  {
+                            (dispatch: Dispatch<any>, getState) =>  {
     dispatch({type: USER_LOADING, payload: true});
     axios.get('http://localhost:8080/api/auth/', configToken(getState))
             .then((res:AxiosResponse) => dispatch({
@@ -109,4 +111,13 @@ export const register = (req: RegisterRequest):
                 dispatch(returnErrors(err.message, err.status, 'REGISTER_FAILED'));
                 dispatch({type: REGISTER_FAILED});
             })
+}
+export const setModalState = (modalState: boolean):
+                                ThunkAction<void, RootState, unknown, Action> => dispatch => {
+    if(modalState) {
+        dispatch({ type: MODAL_OPEN })
+    }
+    else {
+        dispatch({ type: MODAL_CLOSE })
+    }
 }

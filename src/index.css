@@ -1,0 +1,10 @@
+@import './styles/base.css';
+@import './styles/HomePage/features.css';
+@import './styles/HomePage/footer.css';
+@import './styles/HomePage/login-form.css';
+@import './styles/HomePage/auth.css';
+@import './styles/HomePage/signup.css';
+@import './styles/Auth/auth-sl.css';
+@import './styles/GlobalComponents/auth-modal.css';
+@import './styles/PostPage/posts.css';
+@import 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';

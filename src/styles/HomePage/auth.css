@@ -1,0 +1,30 @@
+.auth-form {
+    width: 50%;
+    background-color: var(--dark-blue);
+}
+.cont-auth {
+    height: 93vh;
+
+}
+.home-page {
+    height: 100vh;
+    width: 100%;
+    /* overflow: hidden; */
+}
+@media(max-width: 990px) {
+    .cont-auth {
+        height: auto;
+        padding: 2rem 0;
+
+    }
+    .home-container {
+        flex-direction: column-reverse;
+    }
+    /* .auth {
+        width: 100%;
+
+    } */
+    .auth-form {
+        width: 100%;
+    }
+}

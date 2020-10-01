@@ -1,0 +1,29 @@
+/* sl means sign up login only added to differentiate from auth*/
+.auth-page {
+    background-color: var(--dark-blue);
+    height: 100vh;
+    overflow: hidden;
+}
+.fake-twitter-text {
+    font-size: 1.5rem;
+}
+.twitter-auth-form {
+    width: 100%;
+    max-width: 550px;
+    margin-top: .5rem;
+}
+.white-bottom {
+    border-bottom: 2px solid var(--gray);
+}
+.auth{
+    margin-top: 1rem;
+}
+.auth-group {
+    overflow: hidden;
+}
+.forgot-signup {
+    margin-top: 1rem;
+}
+.submit-twitter-auth {
+    margin-top: .5rem;
+}

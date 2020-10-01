@@ -7,6 +7,8 @@ import {
     REGISTER_SUCCESS,
     LOGOUT_SUCCESS,
     AUTH_ERROR,
+    MODAL_OPEN,
+    MODAL_CLOSE
 } from '../actionTypes';
 import { IUser } from '../actions/auth';
 
@@ -14,17 +16,19 @@ interface Auth {
     token: string | null,
     isAuthenticated: boolean | null,
     isLoading: boolean,
-    user: IUser | null
+    user: IUser | null,
+    modalOpen: false
 }
 interface AuthState {
     type: string
-    payload: Auth
+    payload: Auth,
 }
 const initialState: Auth = {
     token: localStorage.getItem('token'),
     isAuthenticated: null,
     isLoading: false,
-    user: null
+    user: null,
+    modalOpen: false
 };
 const auth = (state = initialState, action: AuthState) => {
     switch(action.type) {
@@ -61,6 +65,19 @@ const auth = (state = initialState, action: AuthState) => {
                 isAuthenticated: false,
                 isLoading: false,
             };
+        case MODAL_OPEN:
+            return {
+                ...state,
+                modalOpen: true
+            };
+        case MODAL_CLOSE:
+            return {
+                ...state,
+                modalOpen: false
+            }
+        default:
+            return state;
     }
 };
+
 export default auth;
